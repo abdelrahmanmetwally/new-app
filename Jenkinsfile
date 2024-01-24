@@ -18,7 +18,7 @@ pipeline {
                 echo 'deploy'
                 script {
                          
-                                withCredentials([string(credentialsId: 'openshift', variable: 'KUBECONFIG')]) {
+                                withCredentials([string(credentialsId: 'opesnshift', variable: 'KUBECONFIG')]) {
                                     sh '''
                                         oc login --token=sha256~J_11a-2Wq26kQ5V-gdq1Ck180gitT3ixC9Ob5byKkiA --server=https://api.ocpuat.devopsconsulting.org:6443
  --insecure-skip-tls-verify
