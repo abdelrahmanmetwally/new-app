@@ -18,9 +18,9 @@ pipeline {
                 echo 'deploy'
                 script {
                          
-                                withCredentials([file(credentialsId: '	openshift-credentials', variable: 'KUBECONFIG')]) {
+                                withCredentials([string(credentialsId: 'openshift', variable: 'KUBECONFIG')]) {
                                     sh '''
-
+                                        oc login -u abdelrahman -p abdelrahman console-openshift-console.apps.ocpuat.devopsconsulting.org/ --insecure-skip-tls-verify
                                         oc create deployment app --image=openshiftivolve --replicas=1 --kubeconfig ${KUBECONFIG} -n sample-app
     
                                     '''
