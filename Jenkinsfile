@@ -21,7 +21,7 @@ pipeline {
                                 withCredentials([file(credentialsId: '	openshift-credentials', variable: 'KUBECONFIG')]) {
                                     sh '''
 
-                                        oc create deployment app --image=openshiftivolve --replicas=1 --kubeconfig ${KUBECONFIG} -n abdelrahman
+                                        oc create deployment app --image=openshiftivolve --replicas=1 --kubeconfig ${KUBECONFIG} -n sample-app
     
                                     '''
                                 }
