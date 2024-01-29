@@ -23,6 +23,7 @@ pipeline {
             steps {
                 echo 'deploy'
                 script {
+                    sh ' echo hello'
                          
                                 // withCredentials([file(credentialsId: 'openshift-credentials', variable: 'KUBECONFIG')]) {
                                 //     sh '''
