@@ -31,7 +31,7 @@ pipeline {
                                 //         oc create deployment app --image=openshiftivolve --replicas=1 --kubeconfig ${KUBECONFIG} -n sample-app
     
                                 //     '''
-                                }
+                                // }
                          
                     }
                 }
