@@ -12,6 +12,9 @@ pipeline {
                         
                                 withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                                     sh ' echo hello'
+                                    sh ' docker login -u ${USERNAME} -p ${PASSWORD} '
+                                    sh ' docker build -t abdo23/bakehouseiti:v${BUILD_NUMBER} . '
+                                    sh ' docker push abdo23/bakehouseiti:v${BUILD_NUMBER} '
                                 }
                     
                 }
