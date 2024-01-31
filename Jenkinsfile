@@ -1,14 +1,15 @@
 pipeline {
     agent any
 
-    stage('sonar-qube') {
-        steps {
-            sh "./gradlew sonarqube -Dsonar.projectKey=ivolve-project -Dsonar.host.url=http://localhost:9000 -Dsonar.login=11986ba88cfe1b603256e331f33d03679486adc0"
-            }   
-    }   
+   
 
    
     stages {
+        stage('sonar-qube') {
+            steps {
+                 sh "./gradlew sonarqube -Dsonar.projectKey=ivolve-project -Dsonar.host.url=http://localhost:9000 -Dsonar.login=11986ba88cfe1b603256e331f33d03679486adc0"
+               }   
+        }
         stage('build') {
             steps {
                 echo 'build'
