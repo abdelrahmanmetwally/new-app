@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('sonar-qube') {
             steps {
+                 echo "hello"
                  sh "./gradlew sonarqube -Dsonar.projectKey=ivolve-project -Dsonar.host.url=http://localhost:9000 -Dsonar.login=11986ba88cfe1b603256e331f33d03679486adc0"
                }   
         }
