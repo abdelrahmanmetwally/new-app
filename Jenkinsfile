@@ -34,7 +34,7 @@ pipeline {
                          
                                 withCredentials([file(credentialsId: 'openshift-credentials', variable: 'KUBECONFIG')]) {
                                     sh '''
-                                        oc login --token=${login} --server=https://api.ocpuat.devopsconsulting.org:6443  --insecure-skip-tls-verify
+                                        oc login --token=${KUBECONFIG} --server=https://api.ocpuat.devopsconsulting.org:6443  --insecure-skip-tls-verify
                                         oc project sample-app
                                         oc create deployment app --image=openshiftivolve --replicas=1 --kubeconfig ${KUBECONFIG} -n sample-app
     
